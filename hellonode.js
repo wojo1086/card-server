@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+const Connection = require('./db-connect')
 
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -29,7 +30,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/signup', jsonParser, function(req, res) {
-	console.log(req.body)
+	console.log(Connection)
 	res.send(req.body)
 });
 
